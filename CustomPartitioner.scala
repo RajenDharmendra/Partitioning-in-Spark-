@@ -1,5 +1,4 @@
 package com.spark.examples
-//https://github.com/Re1tReddy/Spark/tree/master/Spark-1.5/src/main/scala/com/spark/examples
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.Partitioner
@@ -21,7 +20,7 @@ object CustomPartitioner  {
 //        
     //create paired RDD 
     val pairedData = inputFile.flatMap(x => x.split(" ")).map(x => (x, 1))
-    pairedData.saveAsTextFile("C:/Users/Dharmendra/Documents/Re1tReddy/pairedData.txt")
+    pairedData.saveAsTextFile("file:/path/to/file/pairedData.txt")
     // The above code will create tuples like (Mike,1),(10000,1),(Steve,1),(2000,1),....
 
     //Define custom pertitioner for paired RDD
